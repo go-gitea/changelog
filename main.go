@@ -135,11 +135,19 @@ func runGenerate(cmd *cli.Context) {
 
 	var labels = make(map[string]string)
 	var changelogs = make(map[string][]github.Issue)
+	var defaultGroup string
 	for _, g := range config.Groups {
 		changelogs[g.Name] = []github.Issue{}
 		for _, l := range g.Labels {
 			labels[l] = g.Name
 		}
+		if g.Default {
+			defaultGroup = g.Name
+		}
+	}
+
+	if defaultGroup == "" {
+		defaultGroup = config.Groups[len(config.Groups)-1].Name
 	}
 
 	var query = fmt.Sprintf(`repo:%s is:merged milestone:"%s"`, config.Repo, milestone)
@@ -167,7 +175,7 @@ func runGenerate(cmd *cli.Context) {
 				}
 			}
 			if !found {
-				changelogs["MISC"] = append(changelogs["MISC"], pr)
+				changelogs[defaultGroup] = append(changelogs[defaultGroup], pr)
 			}
 		}
 
