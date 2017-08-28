@@ -184,7 +184,7 @@ func runGenerate(cmd *cli.Context) {
 		}
 	}
 
-	fmt.Printf("## [%s](https://github.com/%s/releases/tag/v%s) - %s\n", config.Repo, milestone, milestone, time.Now().Format("2006-01-02"))
+	fmt.Printf("## [%s](https://github.com/%s/releases/tag/v%s) - %s\n", milestone, config.Repo, milestone, time.Now().Format("2006-01-02"))
 	for _, g := range config.Groups {
 		fmt.Println("* " + g.Name)
 		for _, pr := range changelogs[g.Name] {
