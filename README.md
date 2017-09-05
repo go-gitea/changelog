@@ -1,5 +1,3 @@
-[简体中文](https://github.com/go-gitea/gitea/blob/master/README_ZH.md)
-
 # Changelog - Generate changelog of gitea repository
 
 [![Build Status](https://drone.gitea.io/api/badges/go-gitea/changelog/status.svg)](https://drone.gitea.io/go-gitea/changelog)
@@ -31,9 +29,8 @@ Fork -> Patch -> Push -> Pull Request
 ## Authors
 
 * [Maintainers](https://github.com/orgs/go-gitea/people)
-* [Contributors](https://github.com/go-gitea/gitea/graphs/contributors)
-* [Translators](options/locale/TRANSLATORS)
+* [Contributors](https://github.com/go-gitea/changelog/graphs/contributors)
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/go-gitea/gitea/blob/master/LICENSE) file for the full license text.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/go-gitea/changelog/blob/master/LICENSE) file for the full license text.
