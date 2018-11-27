@@ -195,9 +195,11 @@ func runGenerate(cmd *cli.Context) {
 			continue
 		}
 
-		fmt.Println("* " + g.Name)
+		fmt.Println("<details><summary>" + g.Name + "</summary>")
+		fmt.Println()
 		for _, pr := range changelogs[g.Name] {
-			fmt.Printf("  * %s (#%d)\n", *pr.Title, *pr.Number)
+			fmt.Printf("* %s (#%d)\n", *pr.Title, *pr.Number)
 		}
+		fmt.Println("</details>")
 	}
 }
